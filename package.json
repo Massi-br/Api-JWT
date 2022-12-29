@@ -1,0 +1,43 @@
+{
+  "name": "clac-technical-node",
+  "version": "1.0.0",
+  "description": "Technical test for clac on node",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./app.js",
+    "seed": "node ./db/seed.js",
+    "dev": "nodemon ./app.js",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@shelf/jest-mongodb": "^4.1.4",
+    "body-parser": "^1.20.1",
+    "chai": "^4.3.7",
+    "cors": "2.7.1",
+    "ejs": "^2.7.4",
+    "errorhandler": "1.4.3",
+    "express": "^4.18.2",
+    "express-jwt": "^8.2.1",
+    "express-session": "^1.17.3",
+    "jsonwebtoken": "^9.0.0",
+    "method-override": "^2.3.10",
+    "methods": "1.1.2",
+    "mocha": "^10.2.0",
+    "mocha-mongoose": "^1.2.0",
+    "mongoose": "^6.8.2",
+    "morgan": "^1.10.0",
+    "passport": "^0.6.0",
+    "passport-local": "1.0.0",
+    "request": "^2.88.2",
+    "sequelize": "^6.28.0",
+    "slug": "^0.9.4"
+  },
+  "devDependencies": {
+    "newman": "^5.3.2",
+    "nodemon": "^2.0.20"
+  }
+}
