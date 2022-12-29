@@ -49,5 +49,6 @@ const seedDB = async () => {
 }
 
 seedDB().then(() => {
+    console.log('Seed completed successfully ')
     mongoose.connection.close();
 })

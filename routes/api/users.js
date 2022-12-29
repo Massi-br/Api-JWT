@@ -2,15 +2,6 @@ const mongoose = require('mongoose');
 const router = require('express').Router();
 const passport = require('passport');
 const auth = require('../auth')
-const User = require('../../models/User')
-
-router.get('/user', auth.required, function(req, res, next){
-    User.findById(req.auth.id).then(function(user){
-        if(!user){ return res.sendStatus(401); }
-
-        return res.json({user: user.toAuthJSON()});
-    }).catch(next);
-});
 
 router.post('/login', function(req, res, next){
     if(!req.body.email){
