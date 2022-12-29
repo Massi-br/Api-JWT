@@ -49,3 +49,8 @@ Les cases autorisées pour se rendre de A à B doivent avoir l'attribut ``is_all
 Il n'est possible de se déplacer que verticalement ou horizontalement, pas de diagonal possible.
 
 Nous serons attentif à la logique mise en place pour cet algorithme et pourrons faire abstraction de sa performance.  
+
+## Bonus - Création d'un Dockerfile
+
+S'il vous reste du temps, vous pouvez optionnellement créer un Dockerfile avec un service nodejs ainsi qu'un service mongodb.
+N'oubliez pas de changer les chaînes de connexion dans le code pour le service mongodb ou mettre en place un fichier d'environnement
