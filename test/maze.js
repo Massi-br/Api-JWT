@@ -18,7 +18,8 @@ describe('Resolve mazes', function () {
     describe('Maze 1', function () {
         it('should return find the shortest path', async function () {
 
-            const boxes = await Box.find({'maze[0]._id': '63ad77776ef9fef3107fe251'}).exec().then((maze) => maze);
+            const boxes = await Box.find({'maze': '63ad77776ef9fef3107fe251'}).exec().then((maze) => maze); // /!\ FIXED  /!\
+
 
             const start = boxes.find(element => element.x === 5 && element.y === 0);
             const end = boxes.find(element => element.x === 9 && element.y === 10);
@@ -30,7 +31,7 @@ describe('Resolve mazes', function () {
     describe('Maze 2', function () {
         it('should return find the shortest path', async function () {
 
-            const boxes = await Box.find({'maze[0]._id': '63ad77776ef9fef3107fe252'}).exec().then((maze) => maze);
+            const boxes = await Box.find({'maze': '63ad77776ef9fef3107fe252'}).exec().then((maze) => maze);
 
             const start = boxes.find(element => element.x === 0 && element.y === 5);
             const end = boxes.find(element => element.x === 12 && element.y === 3);
@@ -41,7 +42,7 @@ describe('Resolve mazes', function () {
 
         it('should not be resolvable', async function () {
 
-            const boxes = await Box.find({'maze[0]._id': '63ad77776ef9fef3107fe252'}).exec().then((maze) => maze);
+            const boxes = await Box.find({'maze': '63ad77776ef9fef3107fe252'}).exec().then((maze) => maze);
 
             const start = boxes.find(element => element.x === 0 && element.y === 5);
             const end = boxes.find(element => element.x === 12 && element.y === 2);
