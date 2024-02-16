@@ -14,4 +14,22 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.post("/", async (req, res) => {
+  const { nameMaze } = req.body;
+  if (!nameMaze) {
+    return res.status(400).json({
+      message: "Merci de bien vouloir entrer le nom du nouveau labyrinthe",
+    });
+  }
+  const existingMaze = await MazeModel.findOne({ name: nameMaze });
+  if (existingMaze) {
+    return res.status(409).json({ error: "Le labyrinthe existe déjà" });
+  }
+
+  const newMaze = new MazeModel({ name: nameMaze });
+  const savedMaze = await newMaze.save();
+
+  return res.status(201).json(savedMaze);
+});
+
 module.exports = router;
